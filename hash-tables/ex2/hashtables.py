@@ -1,5 +1,3 @@
-
-
 # '''
 # Linked List hash table key/value pair
 # '''
@@ -8,8 +6,6 @@ class LinkedPair:
         self.key = key
         self.value = value
         self.next = None
-
-
 # '''
 # Resizing hash table
 # '''
@@ -17,8 +13,6 @@ class HashTable:
     def __init__(self, capacity):
         self.capacity = capacity
         self.storage = [None] * capacity
-
-
 # '''
 # Research and implement the djb2 hash function
 # '''
@@ -28,8 +22,6 @@ def hash(string, max):
         hash = ((hash << 5) + hash) + ord(char)
 
     return hash % max
-
-
 # '''
 # Fill this in.
 
@@ -51,8 +43,6 @@ def hash_table_insert(hash_table, key, value):
         new_pair = LinkedPair(key, value)
         new_pair.next = hash_table.storage[index]
         hash_table.storage[index] = new_pair
-
-
 # '''
 # Fill this in.
 
@@ -75,8 +65,6 @@ def hash_table_remove(hash_table, key):
             hash_table.storage[index] = current_pair.next
         else:
             last_pair.next = current_pair.next
-
-
 # '''
 # Fill this in.
 
@@ -91,8 +79,6 @@ def hash_table_retrieve(hash_table, key):
         if(current_pair.key == key):
             return current_pair.value
         current_pair = current_pair.next
-
-
 # '''
 # Fill this in
 # '''
