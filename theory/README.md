@@ -3,40 +3,48 @@
 ## Computation
 
 Fill out truth tables for the following expressions:
+Assume:
+  0 - false
+  1 - true
 
 1. `(A ∨ ¬B)`   (alternate: `(A || !B)`)
+  A or not B
 ```
 A     B     result
 -------------------
-0     0       ?
-0     1       ?
-1     0       ?
-1     1       ?
+0     0       1
+0     1       0
+1     0       1
+1     1       1
 ```
 
 2. `(¬A ∨ B) ∧ ¬(A ∧ ¬B)`   (alternate: `(!A || B) && !(A && !B)`)
+
+(not A or B) and not(A and not B)
 ```
 A     B     result
 -------------------
-0     0       ?
-0     1       ?
-1     0       ?
-1     1       ?
+0     0       1
+0     1       1
+1     0       0
+1     1       1
 ```
 
 3. `¬(A ∨ B) ∨ ( (A ∨ C) ∧ ¬(B ∨ ¬C) )`   (alternate: `!(A || B) || ( (A || C) && !(B || !C) )`)
   * (Hint: Is it possible to calculate this using code?)
+
+  not(a or b) or ((a or c) and not(b or not c))
 ```
 A     B     C     result
 -------------------------
-0     0     0       ?
-0     0     1       ?
-0     1     0       ?
-0     1     1       ?
-1     0     0       ?
-1     0     1       ?
-1     1     0       ?
-1     1     1       ?
+0     0     0       1
+0     0     1       1
+0     1     0       0
+0     1     1       0
+1     0     0       0
+1     0     1       1
+1     1     0       0
+1     1     1       0
 ```
 
 ## STRETCH GOAL
